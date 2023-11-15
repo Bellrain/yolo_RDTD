@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload and Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #3498db;
+        }
+        h2 {
+            color: #27ae60;
+        }
+        .upload-form {
+            margin: 20px;
+        }
+        .result-image {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Upload and Detection</h1>
+    <form class="upload-form" method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Upload and Detect">
+    </form>
+    <h2>Detection Result:</h2>
+    <h3>{{filename}}</h3>
+
+    <!-- 이미지를 표시할 부분 -->
+    <img class="result-image" src="data:image/jpeg;base64,{{ result }}" alt="Detection Result">
+</body>
+</html>
